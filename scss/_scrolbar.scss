@@ -1,0 +1,15 @@
+$prefixes: (webkit, moz);
+
+@each $pref in $prefixes {
+  body {
+    &::-#{$pref}-scrollbar {
+      width: 0.25rem;
+    }
+    &::-#{$pref}-scrollbar-thumb {
+      background: #6659b8;
+    }
+    &::-#{$pref}-scrollbar-track {
+      background: #1e1e24;
+    }
+  }
+}

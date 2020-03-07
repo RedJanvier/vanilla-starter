@@ -1,129 +1,136 @@
 .fa-primary {
-  color: #ff7eee;
+   color: #ff7eee;
 }
 
 .fa-secondary {
-  color: #df49a6;
+   color: #df49a6;
 }
 
 .fa-primary,
 .fa-secondary {
-  transition: $transition-speed;
+   transition: $transition-speed;
 }
 
 .navbar {
-  position: fixed;
-  background: $bg-primary;
-  transition: width 0.2s ease;
+   position: fixed;
+   background: $bg-primary;
+   transition: width 0.2s ease;
 
-  &-nav {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
+   &-nav {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+   }
 
-  &-item {
-    width: 100%;
-  }
+   &-item {
+      width: 100%;
+   }
 
-  &-link {
-    display: flex;
-    align-items: center;
-    height: 5rem;
-    color: $text-primary;
-    text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
+   &-link {
+      display: flex;
+      align-items: center;
+      height: 5rem;
+      color: $text-primary;
+      text-decoration: none;
+      filter: grayscale(100%) opacity(0.7);
 
-    &:hover {
-      filter: grayscale(0%) opacity(1);
-      background: $bg-secondary;
+      &:hover {
+         filter: grayscale(0%) opacity(1);
+         background: $bg-secondary;
+         color: $text-secondary;
+      }
+
+      svg {
+         max-width: 2rem;
+         margin: 0 1.5rem;
+      }
+
+      .link-text {
+         display: none;
+         margin-left: 1rem;
+      }
+   }
+
+   &:hover {
+      .logo svg {
+         transform: rotate(-180deg);
+      }
+   }
+
+   .logo {
+      margin: 0;
+      width: 100%;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-align: center;
       color: $text-secondary;
-    }
+      background: $bg-secondary;
+      letter-spacing: 0.3ch;
 
-    svg {
-      max-width: 2rem;
-      margin: 0 1.5rem;
-    }
-
-    .link-text {
-      display: none;
-      margin-left: 1rem;
-    }
-  }
-
-  &:hover {
-    .logo svg {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .logo {
-    margin: 0;
-    width: 100%;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    text-align: center;
-    color: $text-secondary;
-    background: $bg-secondary;
-    letter-spacing: 0.3ch;
-
-    svg {
-      transform: rotate(0deg);
-      transition: transform $transition-speed;
-    }
-  }
+      svg {
+         transform: rotate(0deg);
+         transition: transform $transition-speed;
+      }
+   }
 }
 
 // small screens
 @media only screen and (max-width: 600px) {
-  .navbar {
-    bottom: 0;
-    width: 100vw;
-    height: 4rem;
-    overflow: hidden;
+   .navbar {
+      bottom: 0;
+      width: 100vw;
+      height: 4rem;
+      overflow: hidden;
 
-    .logo {
-      display: none;
-    }
+      .logo {
+         display: none;
+      }
 
-    &-nav {
-      flex-direction: row;
-    }
+      &-nav {
+         flex-direction: row;
+      }
 
-    &-link {
-      justify-content: center;
-    }
-  }
-
-  main {
-    margin: 0;
-  }
+      &-link {
+         justify-content: center;
+      }
+   }
+   .container {
+      margin: 0;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 4fr 4fr 3fr 1fr;
+      grid-template-areas:
+         "header"
+         "main"
+         "aside"
+         "section"
+         "footer";
+   }
 }
 
 // large screens
 @media only screen and (min-width: 600px) {
-  .navbar {
-    width: 5rem;
-    height: 100vh;
+   .navbar {
+      width: 5rem;
+      height: 100vh;
 
-    &:hover {
-      width: 16rem;
+      &:hover {
+         width: 16rem;
 
-      .link-text {
-        display: inline;
-        transition: opacity $transition-speed;
+         .link-text {
+            display: inline;
+            transition: opacity $transition-speed;
+         }
       }
-    }
 
-    &-item {
-      &:last-child {
-        margin-top: auto;
+      &-item {
+         &:last-child {
+            margin-top: auto;
+         }
       }
-    }
-  }
+   }
 }

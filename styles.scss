@@ -1,20 +1,4 @@
 @import "scss/config";
 // @import "scss/scrolbar";
 @import "scss/navbar";
-
-:root {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: white;
-  color: black;
-}
-
-main {
-  margin-left: 5rem;
-  padding: 1rem;
-}
+@import "scss/layout";

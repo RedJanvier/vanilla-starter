@@ -1,0 +1,25 @@
+header {
+   grid-area: header;
+}
+
+main {
+   grid-area: main;
+   background: #eff169;
+}
+
+aside {
+   grid-area: aside;
+   background: #69f18b;
+}
+
+section {
+   grid-area: section;
+   background: #3d3930;
+   color: #ffffff;
+}
+
+footer {
+   grid-area: footer;
+   background: #1b1a18;
+   color: #ffffff;
+}
